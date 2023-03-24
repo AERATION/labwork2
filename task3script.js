@@ -30,13 +30,17 @@ function calculate() {
 	const depositTerm = document.getElementById("depositTerm").value;
 	const depositAmount = document.getElementById("depositAmount").value;
 
-	if (depositType === "none" || depositTerm === "none"){
-		alert("Вы не указали вид вклада или срок вклада")
+	if (depositType === "none"){
+		alert("Вы не указали тип вклада!")
+		return
+	}
+	if (depositTerm === "none"){
+		alert("Вы не указали срок вклада!")
 		return
 	}
 
 	if (isNaN(depositAmount)){
-		alert("Укажите число")
+		alert("Неправильный ввод суммы вклада!")
 		return
 	}
 

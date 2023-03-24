@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slider</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="task2style.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
 
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://miro.medium.com/max/1400/1*BR2RiTRoYor9xSrzEgxLWQ.jpeg"></div>
+      <div class="swiper-slide"><img src="https://lookw.ru/9/966/1566943288-1-31.jpg"></div>
       <div class="swiper-slide"><img src="https://fireseo.ru/wp-content/uploads/2022/06/programming.jpeg"></div>
       <div class="swiper-slide"><img src="https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?w=2000"></div>
       <div class="swiper-slide"><img src="https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg
@@ -57,18 +58,26 @@
   <div class="swiper-button-prev"></div>
 
   <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      mousewheel: true,
-      keyboard: true,
-    });
+    new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    mousewheel: {
+        sensitivity: 0.5
+    },
+
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+
+    spaceBetween: 30,
+
+    freeMode: true,
+})
   </script>
 </body>
 </html>

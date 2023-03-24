@@ -1,83 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="task2style.css">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratory work №2</title>
+  <link href="task2style.css" rel="stylesheet">
+  <script src="task2script.js" defer></script>
   <style>
-    html,
-    body{
-      height: 100%;
-      font-size: 15px;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
-    .swiper{
-      width: 1000px;
-      height: 100%;
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
     }
-    .swiper-slide{
-      text-align: center;
-      font-size: 18px;
-      background-color: aliceblue;
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .itc-slider__wrapper {
+      overflow: hidden;
+    }
+
+    .itc-slider__item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      height: 250px;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    .swiper-slide img{
-      width: 58%;
-      object-fit: cover;
-    }
-    .swiper-button-next, .swiper-rtl .swiper-button-prev{
-      right: 140px !important; 
-      left: auto;
-    }
-    .swiper-button-prev, .swiper-rtl .swiper-button-next{
-      left: 140px !important; 
-      right: auto;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 7rem;
     }
 
+    .itc-slider__item:nth-child(1) {
+      background-color: #f44336;
+    }
+
+    .itc-slider__item:nth-child(2) {
+      background-color: #9c27b0;
+    }
+
+    .itc-slider__item:nth-child(3) {
+      background-color: #3f51b5;
+    }
+
+    .itc-slider__item:nth-child(4) {
+      background-color: #03a9f4;
+    }
+
+    .itc-slider__item:nth-child(5) {
+      background-color: #4caf50;
+    }
   </style>
+</head>
 
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://lookw.ru/9/966/1566943288-1-31.jpg"></div>
-      <div class="swiper-slide"><img src="https://fireseo.ru/wp-content/uploads/2022/06/programming.jpeg"></div>
-      <div class="swiper-slide"><img src="https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?w=2000"></div>
-      <div class="swiper-slide"><img src="https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg
-        "></div>
-      <div class="swiper-slide"><img src="https://img.freepik.com/premium-vector/minimalist-shape-background_112769-210.jpg"></div>
+<body>
+
+<div class="container">
+
+  <div class="itc-slider" data-autoplay="true" data-interval="7000" data-loop="true" data-slider="itc-slider">
+    <div class="itc-slider__wrapper">
+      <div class="itc-slider__items">
+        <div class="itc-slider__item">
+          <img src="img/1.jpg">
+        </div>
+        <div class="itc-slider__item">
+          <img src="img/2.jpg">
+        </div>
+        <div class="itc-slider__item">
+          <img src="img/3.jpg">
+        </div>
+        <div class="itc-slider__item">
+          <img src="img/4.jpg">
+        </div>
+        <div class="itc-slider__item">
+          <img src="img/5.jpg">
+        </div>
+      </div>
     </div>
-    <div class="swiper-pagination"></div>
+    <button class="itc-slider__btn itc-slider__btn_prev"></button>
+    <button class="itc-slider__btn itc-slider__btn_next"></button>
+    <ol class="itc-slider__indicators">
+      <li class="itc-slider__indicator" data-slide-to="0"></li>
+      <li class="itc-slider__indicator" data-slide-to="1"></li>
+      <li class="itc-slider__indicator" data-slide-to="2"></li>
+      <li class="itc-slider__indicator" data-slide-to="3"></li>
+      <li class="itc-slider__indicator" data-slide-to="4"></li>
+    </ol>
   </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
 
-  <script>
-    new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    mousewheel: {
-        sensitivity: 0.5
-    },
-
-    slidesPerView: 'auto',
-    slidesPerGroup: 1,
-
-    spaceBetween: 30,
-
-    freeMode: true,
-})
-  </script>
+</div>
 </body>
+
 </html>
+
+            
